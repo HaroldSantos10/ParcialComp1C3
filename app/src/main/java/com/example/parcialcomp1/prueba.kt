@@ -1,7 +1,13 @@
 package com.example.parcialcomp1
 
 fun main(){
+    print("Value 1: ")
+    var num1: String? = readLine()?.ifBlank { null } ?: null
+    print("Value 2: ")
+    var num2: String? = readLine()?.ifBlank { null } ?: null
 
+    var result = suma(num1,num2)
+    println(result)
 }
 
 fun suma(num1 : String? , num2 : String?): String{
