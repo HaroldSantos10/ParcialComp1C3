@@ -13,8 +13,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val n1 = findViewById<EditText>(R.id.eTxtNum1)
+        val n2 = findViewById<EditText>(R.id.eTxtNum2)
+        val r = findViewById<TextView>(R.id.txtResult)
+        val btnCalc = findViewById<Button>(R.id.btnCalc)
 
 
+
+        btnCalc.setOnClickListener {
+
+            val nb1 = if(n1.text.toString().isBlank()){null}else(n1.text.toString().toInt())
+            val nb2 = if(n2.text.toString().isBlank()){null}else(n2.text.toString().toInt())
+            r.text = sum(nb1,nb2)
+        }
 
 
 
